@@ -570,19 +570,8 @@ def scoring(transcript, tsv, plp, blb, output, trans=None):
 				f.write('\t'.join(node.split('_')[1:]) + '\t' + Symbol + '\t' +  transcript + '\t' + VEP_IMPACT + '\t' + VEP_Consequence + '\t' + \
 						AF_Max + '\t' + VEP_HGVSc + '\t' + VEP_HGVSp + '\t' + str(homNum)  + '\t' + str(score)+ '\t' + str(PM3_label) + '\n')
 
-	# PM3输出文件中增加VEP注释信息--->与tmp_filtvar.tsv 进行merge
-	# pm3_out = pd.read_csv('output.tsv',sep='\t')
-	# filtvar = pd.read_csv('tmp_filtvar.tsv',sep='\t')
-	#
-	# merged = pd.merge(pm3_out,filtvar,on=['']) filtvar 列名
-
-	print('11111')
-
 if __name__ == '__main__':
 
-	# network('tmp_filtvar.tsv','PLP_chr1_9gene.txt','ENST00000370096')
-	# network('tmp_filtvar.tsv', 'PLP_chr1_9gene.txt', 'ENST00000645284')
-	# scoring('tmp_filtvar.tsv', 'PLP_chr1_9gene.txt', 'ENST00000370096','output.tsv')
 	print('sys.argv', len(sys.argv), sys.argv)
 	print('sys.argv[1]', sys.argv[1])
 	transcript = sys.argv[1]
@@ -599,4 +588,3 @@ if __name__ == '__main__':
 
 	print('intrans', intrans)
 
-	# scoring('ENST00000224721','tmp_filtvar.tsv','PUB_P_hg38.txt','out_freqsmple.tsv',None)

@@ -1,0 +1,2 @@
+sampleid	chr	pos	ref	alt
+HG00097	3	70001030	C	A
