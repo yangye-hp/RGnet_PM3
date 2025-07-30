@@ -94,7 +94,7 @@ python ./Scripts/pm3.py --help
 usage: pm3_addUTRetc.py [-h] --vcf VCF --bed BED --sam SAM [--cache CACHE] --gv GV --fa FA --conf CONF [--af AF] --plp PLP [--blb BLB] [--incis INCIS]
                         [--transcript TRANSCRIPT] [--ncd {Yes,No}] [--intrans INTRANS] --scorePy SCOREPY --output OUTPUT
 
-Extract AR genes and case/family samples, VEP annotation , gnomAD_joint_grpmax_AF annotation.
+Extract AR genes and case/family samples, VEP annotation , gnomAD_joint_grpmax_AF annotation, variants filtration, RGnet construction, PM3 tagging.
 
 options:
   -h, --help            show this help message and exit
