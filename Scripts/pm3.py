@@ -15,7 +15,7 @@ def parse_args(dir_cache_default, transcript_file_default):
     print('transcript_file_default===',transcript_file_default)
     print('transcript_path_default====',transcript_path_default)
 
-    parse = argparse.ArgumentParser(description="Extract AR genes and case/family samples, VEP annotation , gnomAD_joint_grpmax_AF annotation.")
+    parse = argparse.ArgumentParser(description="Extract AR genes and case/family samples, VEP annotation , gnomAD_joint_grpmax_AF annotation, variants filtration, RGnet construction, PM3 tagging.")
     parse.add_argument('--vcf',type=str,required=True,help='The vcf file.')
     parse.add_argument('--bed',type=str,required=True,help='The bed file of AR genes.')
     parse.add_argument('--sam',type=str,required=True,help='The case or family sample file.')
