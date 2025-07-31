@@ -35,13 +35,13 @@ conda config --add channels conda-forge
 
 Install PM3 in a new environment named 'PM3':
 ```
-conda env create -f PM3.yml
+conda env create -f RGnet_PM3/PM3.yml
 conda activate PM3
 ```
 
 3. VEP and VEP plugins
-Annotation of gene variants using Ensembl Variant Effect Predictor(VEP) and its plugins. 
 
+Annotation of gene variants using Ensembl Variant Effect Predictor(VEP) and its plugins. 
 ```
 # Install VEP by conda
 conda install ensembl-vep=113
@@ -79,8 +79,8 @@ samtools faidx Homo_sapiens.GRCh37.dna.primary_assembly.fa
 ```
 # Download the Joint Frequency in gnomAD
 cd $/HOME/RGnet_PM3/database
-wget https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr3.vcf.bgz
-wget https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr3.vcf.bgz.tbi
+wget https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr13.vcf.bgz
+wget https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr13.vcf.bgz.tbi
 ```
 The database and Scripts directory contain the data and conf for a full example of the GJB2 gene. To run with a complete genome, users needs download the appropriate databases and reverse the file name in the vcfanno.conf file.
 
@@ -91,7 +91,7 @@ Users can enter the following command to view the use of this method and define 
 python ./Scripts/pm3.py --help
 ```
 ```
-usage: pm3_addUTRetc.py [-h] --vcf VCF --bed BED --sam SAM [--cache CACHE] --gv GV --fa FA --conf CONF [--af AF] --plp PLP [--blb BLB] [--incis INCIS]
+usage: pm3.py [-h] --vcf VCF --bed BED --sam SAM [--cache CACHE] --gv GV --fa FA --conf CONF [--af AF] --plp PLP [--blb BLB] [--incis INCIS]
                         [--transcript TRANSCRIPT] [--ncd {Yes,No}] [--intrans INTRANS] --scorePy SCOREPY --output OUTPUT
 
 Extract AR genes and case/family samples, VEP annotation , gnomAD_joint_grpmax_AF annotation, variants filtration, RGnet construction, PM3 tagging.
