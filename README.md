@@ -43,10 +43,7 @@ conda activate PM3
 
 Annotation of gene variants using Ensembl Variant Effect Predictor(VEP) and its plugins. 
 ```
-# Install VEP by conda
-conda install ensembl-vep=113
-
-# Download and unpack VEP's offline cache dataset for GRCh38. Make sure that the versions of VEP and VEP cache dataset are consistent
+# Download and unpack VEP's offline cache dataset. Make sure that the versions of VEP and VEP cache dataset are consistent
 mkdir $HOME/.vep
 cd $HOME/.vep
 wget https://ftp.ensembl.org/pub/release-113/variation/indexed_vep_cache/homo_sapiens_vep_113_GRCh38.tar.gz
@@ -63,8 +60,7 @@ mv VEP_plugins Plugins
 4. Reference genome
 ```
 # Download the reference FASTA for GRCh38
-mkdir -p $/HOME/RGnet_PM3/database
-cd $/HOME/RGnet_PM3/database
+cd $HOME/RGnet_PM3/database
 wget https://ftp.ensembl.org/pub/release-113/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 gunzip Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 samtools faidx Homo_sapiens.GRCh38.dna.primary_assembly.fa
@@ -78,7 +74,7 @@ samtools faidx Homo_sapiens.GRCh37.dna.primary_assembly.fa
 5. Allele frequency annotation
 ```
 # Download the Joint Frequency in gnomAD
-cd $/HOME/RGnet_PM3/database
+cd $HOME/RGnet_PM3/database
 wget https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr13.vcf.bgz
 wget https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr13.vcf.bgz.tbi
 ```
@@ -121,7 +117,7 @@ options:
 
 # Example
 ```
-cd $/HOME/RGnet_PM3
+cd $HOME/RGnet_PM3
 nohup python ./Scripts/pm3.py \
 --vcf ./test/annotated_raw.AF_stats.vcf.gz \
 --bed ./inputfile/AR_genelist_hg19_nochr.bed \

@@ -331,7 +331,7 @@ def call_scoring(args):
 if __name__ == '__main__':
     paral_num = 10
     dir_cache_default = '~/.vep'
-    transcript_file_default = '~/PM3/database/MANE_ENST_NM.txt'
+    transcript_file_default = '~/RGnet_PM3/database/MANE_ENST_NM.txt'
     tmp_filt_out = 'tmp_filt.vcf'
     tmp_vep_out = 'tmp_vep.vcf'
     tmp_splitcsq_out = 'tmp_splitcsq.vcf'
