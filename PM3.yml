@@ -1,4 +1,4 @@
-name: PM3_github
+name: PM3
 channels:
   - bioconda
   - conda-forge
