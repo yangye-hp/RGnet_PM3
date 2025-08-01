@@ -573,19 +573,35 @@ def scoring(transcript, tsv, plp, blb, output, trans=None):
 
 if __name__ == '__main__':
 
-	print('sys.argv', len(sys.argv), sys.argv)
-	print('sys.argv[1]', sys.argv[1])
-	transcript = sys.argv[1]
-	tsv = sys.argv[2]
-	plp = sys.argv[3]
-	blb = sys.argv[4]
-	output = sys.argv[5]
+	# print('sys.argv', len(sys.argv), sys.argv)
+	# print('sys.argv[1]', sys.argv[1])
+	# transcript = sys.argv[1]
+	# tsv = sys.argv[2]
+	# plp = sys.argv[3]
+	# output = sys.argv[4]
+	#
+	# if len(sys.argv) == 6:
+	# 	intrans = None
+	# else:
+	# 	intrans = sys.argv[6]
+	import argparse
+	parser = argparse.ArgumentParser()
+	parser.add_argument("transcript")
+	parser.add_argument("tsv")
+	parser.add_argument("plp")
+	parser.add_argument("output")
+	parser.add_argument("--blb", default=None)
+	parser.add_argument("--intrans", default=None)
 
-	if len(sys.argv) == 6:
-		intrans = None
-	else:
-		intrans = sys.argv[6]
-	scoring(transcript, tsv, plp, blb, output, intrans)
+	args = parser.parse_args()
+	print("transcript:", args.transcript)
+	print("network:", args.tsv)
+	print("plp:", args.plp)
+	print("output:", args.output)
+	print("--blb:", args.blb)
+	print("--intrans:", args.intrans)
 
-	print('intrans', intrans)
+	scoring(args.transcript, args.tsv, args.plp, args.blb, args.output, args.intrans)
+
+	print('intrans:', args.intrans)
 

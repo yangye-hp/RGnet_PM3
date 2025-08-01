@@ -319,11 +319,14 @@ def uniq_transcripts(input_tsv, output_txt):
     subprocess.run(uniq_command, shell=True, check=True)
 
 def call_scoring(args):
-    uniq_transc, score_py, network, plp, blb, output, intrans = args
-    command = ['python',score_py, uniq_transc, network, plp, blb, output]
+    transcript, score_py, tsv, plp, blb, output, intrans = args
+    command = ['python',score_py, transcript, tsv, plp, output]
     print('intrans===',intrans)
+    print('blb===', blb)
+    if blb:
+        command.append(['--blb',blb])
     if intrans:
-        command.append(intrans)
+        command.append(['--intrans',intrans])
     subprocess.run(command)
     # call_command = f"cat {uniq_transc} | xargs -P 20 -n 1 python {score_py} {network_tsv} {plp} {output} {intrans}"
     # subprocess.run(call_command,shell=True,check=True)
