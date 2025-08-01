@@ -78,7 +78,7 @@ cd $HOME/RGnet_PM3/database
 wget https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr13.vcf.bgz
 wget https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/joint/gnomad.joint.v4.1.sites.chr13.vcf.bgz.tbi
 ```
-The database and Scripts directory contain the data and conf for a full example of the GJB2 gene. To run with a complete genome, users needs download the appropriate databases and reverse the file name in the vcfanno.conf file.
+The database and Scripts directory contain the data and conf for a full example of the GJB2 gene. To run with a complete genome, users needs download the appropriate databases and reverse the file name in the vcfanno.conf file. By the way, in order to avoid vcfanno not being able to recognize '~' (home directory), it is best to use an absolute path for the comment file.
 
 
 # Usage
