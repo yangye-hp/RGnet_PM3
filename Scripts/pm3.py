@@ -81,7 +81,7 @@ def split_csq(input_vcf, output_vcf):
                     # print(line)
                     out_f.write(line + '\n')
                 elif (line.startswith("##")):
-                    # print(line)
+                    # print(line)mul
                     out_f.write(line + '\n')
                 elif (line.startswith("#")):
                     #######找到一个#好开头的那一行，得到INFO所在的字段坐标

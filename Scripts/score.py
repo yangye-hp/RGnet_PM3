@@ -27,14 +27,15 @@ def labeling(input_tsv, plp, blb, feature, transList):
 			sites_p[site] = 'Pathogenic'
 
 	## B/LB位点
-	with open(blb, 'r') as f:
-		for line in f:
-			linenum += 1
-			if linenum == 1:
-				continue
-			tmp = line.replace('\n', '').split('\t')
-			site = tmp[1] + '_' + tmp[2] + '_' + tmp[3] + '_' + tmp[4]
-			sites_b[site] = 'Benign'
+	if blb is not None:
+		with open(blb, 'r') as f:
+			for line in f:
+				linenum += 1
+				if linenum == 1:
+					continue
+				tmp = line.replace('\n', '').split('\t')
+				site = tmp[1] + '_' + tmp[2] + '_' + tmp[3] + '_' + tmp[4]
+				sites_b[site] = 'Benign'
 
 	# print('sites length====', len(sites))
 	sampleIDs = []
